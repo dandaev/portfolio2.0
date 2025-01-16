@@ -2147,3 +2147,23 @@ textarea.form-input::-webkit-resizer { display: none; }
   background: var(--smoky-black-light);
   color: var(--accent-light);
 }
+
+/* Стили для карточек сервисов на маленьких экранах */
+@media (max-width: 580px) {
+  .service-content-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-item {
+    padding: 20px 15px;
+  }
+
+  .service-item-title {
+    font-size: var(--fs-6);
+  }
+
+  .service-icon-box {
+    margin: 0 auto;
+  }
+}
