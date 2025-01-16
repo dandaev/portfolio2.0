@@ -654,9 +654,19 @@ main {
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
+.service-icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: var(--orange-yellow-crayola);
+}
 
-.service-icon-box img { margin: auto; }
+.service-icon-box::before {
+  display: none;
+}
 
 .service-content-box { text-align: center; }
 
@@ -2102,4 +2112,38 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .light-theme .icon-box::before {
   background: var(--eerie-black-1-light);
+}
+
+/* Применяем цвет для светлой темы */
+.light-theme .service-icon-box {
+  color: var(--accent-light);
+}
+
+/* Стили для основной карточки */
+.service-item:first-child {
+  border: 1px solid var(--orange-yellow-crayola) !important;
+  position: relative;
+}
+
+.service-item:first-child::after {
+  content: "main";
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  background: var(--eerie-black-1);
+  padding: 0 8px;
+  font-size: 14px;
+  color: var(--orange-yellow-crayola);
+  letter-spacing: 1px;
+  border-radius: 10px;
+}
+
+/* Для светлой темы */
+.light-theme .service-item:first-child {
+  border: 2px solid var(--accent-light);
+}
+
+.light-theme .service-item:first-child::after {
+  background: var(--smoky-black-light);
+  color: var(--accent-light);
 }
