@@ -1,6 +1,26 @@
 'use strict';
 
+// theme variables
+const themeBtn = document.querySelector("[data-theme-btn]");
+const HTML = document.documentElement;
+let isDark = true;
+let storedTheme = localStorage.getItem("theme");
 
+// Проверяем сохраненную тему
+if (storedTheme) {
+  HTML.className = storedTheme;
+  isDark = storedTheme === "light-theme" ? false : true;
+}
+
+// toggle theme function
+const toggleTheme = function() {
+  isDark = !isDark;
+  HTML.classList.toggle("light-theme");
+  localStorage.setItem("theme", isDark ? "" : "light-theme");
+}
+
+// add event to theme button
+themeBtn.addEventListener("click", toggleTheme);
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
