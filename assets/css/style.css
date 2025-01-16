@@ -225,7 +225,10 @@
   background: var(--gray-light);
 }
 
-
+.testimonials-avatar-box > img {
+  border-radius: 50%;
+  padding-bottom: 10px;
+}
 
 
 
@@ -448,6 +451,11 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.avatar-box > img {
+  border-radius: 50%;
 }
 
 .info-content .name {
@@ -600,6 +608,12 @@ main {
 .navbar-link:focus { color: var(--light-gray-70); }
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+.navbar-link[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 
 
